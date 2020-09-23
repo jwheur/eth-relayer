@@ -170,7 +170,10 @@ func initPolyServer(servConfig *config.ServiceConfig, polysdk *sdk.PolySdk, ethe
 
 func main() {
 	log.Infof("main - ETH relayer starting...")
-	if err := setupApp().Run(os.Args); err != nil {
+	app := setupApp()
+	log.Infof("app", app)
+	err := app.Run(os.Args)
+	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
