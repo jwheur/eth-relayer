@@ -172,6 +172,7 @@ func main() {
 	log.Infof("main - ETH relayer starting...")
 	app := setupApp()
 	log.Infof("app", app)
+	log.Infof("os.Args", os.Args)
 	err := app.Run(os.Args)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
