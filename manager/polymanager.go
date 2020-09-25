@@ -449,6 +449,7 @@ func (this *EthSender) commitDepositEventsWithHeader(header *polytypes.Header, p
 			}
 		}()
 	}
+	log.Info("**sending txn")
 	//TODO: could be blocked
 	c <- &EthTxInfo{
 		txData:       txData,
