@@ -21,6 +21,10 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"fmt"
+	"math/rand"
+	"strconv"
+	"strings"
+
 	"github.com/ethereum/go-ethereum/accounts"
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	ethcommon "github.com/ethereum/go-ethereum/common"
@@ -36,11 +40,8 @@ import (
 	sdk "github.com/polynetwork/poly-go-sdk"
 	"github.com/polynetwork/poly/common"
 	"github.com/polynetwork/poly/common/password"
-	"github.com/polynetwork/poly/consensus/vbft/config"
+	vconfig "github.com/polynetwork/poly/consensus/vbft/config"
 	common2 "github.com/polynetwork/poly/native/service/cross_chain_manager/common"
-	"math/rand"
-	"strconv"
-	"strings"
 
 	"math/big"
 	"time"
@@ -449,7 +450,6 @@ func (this *EthSender) commitDepositEventsWithHeader(header *polytypes.Header, p
 			}
 		}()
 	}
-	log.Info("**sending txn")
 	//TODO: could be blocked
 	c <- &EthTxInfo{
 		txData:       txData,

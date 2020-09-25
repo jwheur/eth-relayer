@@ -1,3 +1,5 @@
+accounts/
+eth_relayer
 .idea/
 .idea/workspace.xml
 capital*
